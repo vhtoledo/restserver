@@ -1,7 +1,7 @@
 const { response } = require('express');
 const { Categoria } = require('../models');
 
-
+// obtener categorias - paginado
 const obtenerCategorias = async(req, res = response ) => {
 
     const { limite = 5, desde = 0 } = req.query;
