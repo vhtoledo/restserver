@@ -21,7 +21,7 @@ const buscarUsuarios = async( termino = '', res = response ) => {
         });
     }
 
-    const regex = new RegExp( termino, 'i' ); //expresion regular que sea incensible a mayusculas y minusculas 
+    const regex = new RegExp( termino, 'i' ); //expresion regular, para que sea incensible a mayusculas y minusculas 
     const usuarios = await Usuario.find({
         $or: [{ nombre: regex }, { correo: regex }],
         $and: [{ estado: true }]
